@@ -1,4 +1,4 @@
-import logo from "@/assets/46bcd5ca-e989-4ec3-8bbe-f736a9d5ae5c.png";
+import logo from "@/assets/logo-bessie-asasul.png";
 import heroImg from "@/assets/hero-beauty.jpg";
 import { MessageCircle } from "lucide-react";
 
