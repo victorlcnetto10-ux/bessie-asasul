@@ -1,12 +1,12 @@
-import { Scissors, Sparkles, Eye, Paintbrush, ScissorsLineDashed, Crown } from "lucide-react";
+import { Scissors, Sparkles, Eye, Paintbrush, Flower2, Palette } from "lucide-react";
 
 const services = [
   { icon: Sparkles, name: "Escova" },
   { icon: Paintbrush, name: "Manicure e Pedicure" },
   { icon: Eye, name: "Design de Sobrancelha" },
-  { icon: Crown, name: "Maquiagem" },
+  { icon: Palette, name: "Maquiagem" },
   { icon: Scissors, name: "Corte" },
-  { icon: ScissorsLineDashed, name: "Penteado" },
+  { icon: Flower2, name: "Penteado" },
 ];
 
 const ServicosSection = () => (

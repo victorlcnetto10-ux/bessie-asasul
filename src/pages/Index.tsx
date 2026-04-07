@@ -4,6 +4,7 @@ import ServicosSection from "@/components/ServicosSection";
 import SobreSection from "@/components/SobreSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 
 const Index = () => (
   <main>
@@ -13,6 +14,7 @@ const Index = () => (
     <SobreSection />
     <CTASection />
     <Footer />
+    <FloatingButtons />
   </main>
 );
 
