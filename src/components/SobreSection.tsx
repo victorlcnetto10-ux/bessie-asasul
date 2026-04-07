@@ -1,20 +1,32 @@
-import salonImg from "@/assets/salon-interior.jpg";
+import salon1 from "@/assets/salon-1.jpg";
+import salon2 from "@/assets/salon-2.jpg";
+import salon3 from "@/assets/salon-3.jpg";
+
+const images = [
+  { src: salon1, alt: "Interior do salão Bessie Beauty Club" },
+  { src: salon2, alt: "Esmaltes e produtos Bessie Beauty Club" },
+  { src: salon3, alt: "Estações de atendimento Bessie Beauty Club" },
+];
 
 const SobreSection = () => (
   <section className="py-20 md:py-28 bg-background">
     <div className="container">
-      <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-        <div className="rounded-2xl overflow-hidden shadow-xl">
-          <img
-            src={salonImg}
-            alt="Interior do salão Bessie Beauty Club"
-            className="w-full h-72 md:h-96 object-cover"
-            loading="lazy"
-            width={1280}
-            height={720}
-          />
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-3 gap-4 mb-12 rounded-2xl overflow-hidden">
+          {images.map((img) => (
+            <div key={img.alt} className="overflow-hidden rounded-2xl shadow-xl">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-56 md:h-80 object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width={640}
+                height={480}
+              />
+            </div>
+          ))}
         </div>
-        <div>
+        <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
             Sobre a <span className="text-primary">Bessie</span>
           </h2>

@@ -7,7 +7,7 @@ const CTASection = () => (
   <section className="py-20 md:py-28 bg-primary text-primary-foreground">
     <div className="container text-center">
       <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
-        Venha ficar ainda mais linda!
+        Venha ficar linda que só a Bessie!
       </h2>
       <p className="text-lg md:text-xl opacity-90 mb-4 max-w-xl mx-auto">
         Atendimento sem hora marcada, de domingo a domingo.
