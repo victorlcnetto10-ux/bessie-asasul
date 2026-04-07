@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-bessie.png";
+import logo from "@/assets/logo-new.png";
 import heroImg from "@/assets/hero-beauty.jpg";
 import { MessageCircle } from "lucide-react";
 
@@ -23,7 +23,7 @@ const HeroSection = () => (
         <img
           src={logo}
           alt="Bessie Beauty Club"
-          className="h-16 md:h-24 mb-8 animate-fade-in-up"
+          className="h-16 md:h-24 mb-8 animate-fade-in-up my-0 py-[80px] px-[20px]"
           width={300}
           height={100}
         />
