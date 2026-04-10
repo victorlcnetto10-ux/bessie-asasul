@@ -5,50 +5,113 @@ import { MessageCircle } from "lucide-react";
 const WHATSAPP_URL = "https://wa.me/5561999898382?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Bessie%20Beauty%20Club";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center overflow-hidden bg-secondary">
-    {/* Background image */}
+  <section className="relative min-h-screen flex items-center overflow-hidden">
+
+    {/* ── Imagem de fundo ── */}
     <div className="absolute inset-0">
       <img
         src={heroImg}
         alt="Bessie Beauty Club"
-        className="w-full h-full object-cover opacity-20"
-        width={1280}
-        height={720}
+        className="w-full h-full object-cover object-center scale-[1.03]"
+        style={{ filter: "brightness(0.72) saturate(1.12) blur(3px)" }}
+        fetchPriority="high"
+        decoding="async"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/60 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_100%_at_50%_60%,transparent_50%,rgba(0,0,0,0.38)_100%)]" />
+      <div className="absolute inset-0 bg-primary/8 mix-blend-multiply" />
     </div>
 
-    <div className="container relative z-10 py-20 md:py-32">
-      <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+    {/* ── Conteúdo ── */}
+    <div className="container relative z-10
+                    px-5 sm:px-6
+                    pt-24 pb-20
+                    md:pb-32 md:pt-36">
+      <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+
+        {/* Logo — menor no mobile */}
         <img
           src={logo}
           alt="Bessie Beauty Club"
-          className="w-48 md:w-72 mb-8 animate-fade-in-up"
-          width={300}
-          height={100}
+          className="w-40 sm:w-56 md:w-72 lg:w-80 mb-8 md:mb-10 animate-fade-in-up drop-shadow-2xl"
+          style={{ filter: "brightness(0) invert(1)" }}
+          width={450}
+          height={150}
         />
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground leading-tight mb-6 animate-fade-in-up"
-            style={{ animationDelay: "0.1s" }}>
-          Beleza sem complicação,{" "}
-          <span className="text-primary">do seu jeito</span>
+
+        {/* Eyebrow */}
+        <span
+          className="inline-block text-white/60 text-[10px] md:text-[11px] font-semibold tracking-[0.32em] uppercase mb-5 md:mb-6 animate-fade-in-up"
+          style={{ animationDelay: "0.08s" }}
+        >
+          Asa Sul · Brasília
+        </span>
+
+        {/* H1 — quebra de linha pensada para mobile */}
+        <h1
+          className="font-heading font-bold text-white
+                     text-[2.1rem] leading-[1.1] sm:text-4xl md:text-6xl lg:text-[4.25rem]
+                     tracking-tight mb-6 md:mb-7 animate-fade-in-up"
+          style={{ animationDelay: "0.15s" }}
+        >
+          O cuidado que você merece,{" "}
+          <span className="text-primary drop-shadow-md">quando quiser.</span>
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 animate-fade-in-up"
-           style={{ animationDelay: "0.2s" }}>
-          Atendimento sem hora marcada, de domingo a domingo
-        </p>
+
+        {/* Subtítulo — bullets em coluna no mobile, inline no desktop */}
+        <div
+          className="mb-9 md:mb-10 animate-fade-in-up"
+          style={{ animationDelay: "0.22s" }}
+        >
+          {/* Mobile: vertical com bullets */}
+          <div className="flex flex-col items-center gap-2 md:hidden">
+            {["Sem agendamento", "Todos os dias", "Serviços simultâneos"].map((item) => (
+              <span key={item} className="text-white/65 text-[13px] font-medium flex items-center gap-2">
+                <span className="w-1 h-1 rounded-full bg-primary inline-block" />
+                {item}
+              </span>
+            ))}
+          </div>
+          {/* Desktop: inline */}
+          <p className="hidden md:block text-white/65 text-lg leading-relaxed">
+            Sem agendamento · Todos os dias · Serviços simultâneos
+          </p>
+        </div>
+
+        {/* CTA — full width no mobile */}
         <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold
-                     hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in-up"
-          style={{ animationDelay: "0.3s" }}
+          className="inline-flex items-center justify-center gap-2.5 bg-primary text-white
+                     w-full sm:w-auto
+                     px-8 py-4 rounded-full text-[15px] font-bold tracking-wide
+                     hover:bg-primary/90 hover:scale-[1.03]
+                     hover:shadow-[0_16px_40px_-8px_hsl(var(--primary)/0.55)]
+                     active:scale-[0.98]
+                     transition-all duration-300 shadow-lg shadow-primary/30
+                     animate-fade-in-up"
+          style={{ animationDelay: "0.30s" }}
         >
-          <MessageCircle className="w-6 h-6" />
-          Falar no WhatsApp
+          <MessageCircle className="w-5 h-5" />
+          Quero ir hoje
         </a>
+
+        {/* Prova social */}
+        <p
+          className="text-white/35 text-[11px] font-medium tracking-wide mt-5 animate-fade-in-up"
+          style={{ animationDelay: "0.38s" }}
+        >
+          Mais de 5.000 clientes atendidas
+        </p>
+
       </div>
     </div>
+
+    {/* Gradiente de transição */}
+    <div className="absolute inset-x-0 bottom-0 h-24 md:h-32
+                    bg-gradient-to-t from-background to-transparent pointer-events-none" />
+
   </section>
 );
 

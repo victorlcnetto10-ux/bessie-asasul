@@ -3,23 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bessie Beauty Club – Beleza sem complicação</title>
-    <meta name="description" content="Salão de beleza express em Brasília. Atendimento sem hora marcada, de domingo a domingo. Escova, manicure, maquiagem e mais.">
+
+    <!-- Favicon — SVG sem bordas, foco no "B", escala perfeitamente -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Fallback PNG para navegadores que não suportam SVG favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo-bessie.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo-bessie.png" />
+
+    <!-- Primary SEO -->
+    <title>Bessie Beauty Club – Salão de Beleza na Asa Sul, Brasília</title>
+    <meta name="description" content="Salão de beleza express na Asa Sul, Brasília. Sem agendamento, aberto de domingo a domingo. Escova, manicure, pedicure, maquiagem, corte, hidratação e mais." />
+    <meta name="keywords" content="salão de beleza Asa Sul, salão Brasília, manicure Asa Sul, escova Brasília, maquiagem Brasília, sem agendamento, beauty club Brasília" />
     <meta name="author" content="Bessie Beauty Club" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bessie.com.br/" />
 
-    
-    
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/5q6kSPhIKjMjqBehLZO0jGlRrqT2/social-images/social-1775565622746-Logo_Bessie.webp">
+    <meta property="og:url" content="https://bessie.com.br/" />
+    <meta property="og:site_name" content="Bessie Beauty Club" />
+    <meta property="og:title" content="Bessie Beauty Club – Salão de Beleza na Asa Sul, Brasília" />
+    <meta property="og:description" content="Salão de beleza express na Asa Sul, Brasília. Sem agendamento, aberto de domingo a domingo. Escova, manicure, maquiagem e mais." />
+    <meta property="og:image" content="https://bessie.com.br/logo-bessie.png" />
+    <meta property="og:locale" content="pt_BR" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/5q6kSPhIKjMjqBehLZO0jGlRrqT2/social-images/social-1775565622746-Logo_Bessie.webp">
-    <meta property="og:title" content="Bessie Beauty Club – Beleza sem complicação">
-  <meta name="twitter:title" content="Bessie Beauty Club – Beleza sem complicação">
-  <meta property="og:description" content="Salão de beleza express em Brasília. Atendimento sem hora marcada, de domingo a domingo. Escova, manicure, maquiagem e mais.">
-  <meta name="twitter:description" content="Salão de beleza express em Brasília. Atendimento sem hora marcada, de domingo a domingo. Escova, manicure, maquiagem e mais.">
-</head>
+    <meta name="twitter:title" content="Bessie Beauty Club – Salão de Beleza na Asa Sul, Brasília" />
+    <meta name="twitter:description" content="Salão de beleza express na Asa Sul, Brasília. Sem agendamento, aberto de domingo a domingo." />
+    <meta name="twitter:image" content="https://bessie.com.br/logo-bessie.png" />
+
+    <!-- Theme color (barra do browser no mobile) -->
+    <meta name="theme-color" content="#F4845F" />
+
+    <!-- Segurança básica -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Performance: preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- DNS prefetch para serviços externos usados na página -->
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+
+    <!-- Structured Data — LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Bessie Beauty Club",
+      "description": "Salão de beleza express na Asa Sul. Atendimento sem hora marcada, de domingo a domingo.",
+      "url": "https://bessie.com.br",
+      "telephone": "+55-61-99989-8382",
+      "image": "https://bessie.com.br/logo-bessie.png",
+      "priceRange": "R$ 46 – R$ 280",
+      "openingHours": "Mo-Su 09:00-20:00",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Asa Sul",
+        "addressLocality": "Brasília",
+        "addressRegion": "DF",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -15.8267,
+        "longitude": -47.9218
+      },
+      "sameAs": [
+        "https://www.instagram.com/bessie.asasul"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Beleza",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manicure e Pedicure" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Escova" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corte de Cabelo" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maquiagem" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hidratação Capilar" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design de Sobrancelha" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penteado" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spa dos Pés" } }
+        ]
+      }
+    }
+    </script>
+  </head>
 
   <body>
     <div id="root"></div>
