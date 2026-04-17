@@ -5,7 +5,7 @@ import escovaImg      from "@/assets/Escova.jpeg";
 import penteadoImg    from "@/assets/Penteado.jpeg";
 import corteImg       from "@/assets/Corte.jpeg";
 import maquiagemImg   from "@/assets/Maquiagem.jpeg";
-import sobrancelhaImg from "@/assets/Sobrancelha.jpeg";
+import sobrancelhaImg from "@/assets/Sobrancelha.2.jpeg";
 import hidratacaoImg  from "@/assets/Hidratações.jpeg";
 import spaDosPesImg   from "@/assets/Spa-dos-pés.jpeg";
 
@@ -18,7 +18,7 @@ const services = [
   { img: corteImg,       objectPos: "center 25%", name: "Corte",                tagline: "Estilo que combina com você", desc: "Cortes modernos, degradê e acabamentos precisos. Consultoria inclusa para o melhor resultado.", price: "A partir de R$ 150", duration: "30–60 min",  waMsg: "Olá! Gostaria de saber mais sobre Corte na Bessie Beauty Club." },
   { img: maquiagemImg,   objectPos: "center 20%", name: "Maquiagem",            tagline: "Realce sua beleza natural",   desc: "Make social, noiva e artística. Técnicas profissionais para um look impecável e duradouro.", price: "R$ 110–R$ 260",     duration: "45–90 min",  waMsg: "Olá! Gostaria de saber mais sobre Maquiagem na Bessie Beauty Club." },
   { img: sobrancelhaImg, objectPos: "center 30%", name: "Sobrancelha",          tagline: "O olhar que transforma",      desc: "Design personalizado, henna e brow lamination. Moldamos para realçar a estrutura do seu rosto.", price: "A partir de R$ 70",  duration: "30–45 min",  waMsg: "Olá! Gostaria de saber mais sobre Design de Sobrancelha na Bessie Beauty Club." },
-  { img: hidratacaoImg,  objectPos: "center 50%", name: "Hidratação Capilar",   tagline: "Cabelos que brilham de saúde",desc: "Tratamentos com Truss, Davines, L'Anza, Braé e Bessie. Nutrição, reconstrução e brilho duradouro.", price: "R$ 180–R$ 280",     duration: "60–120 min", waMsg: "Olá! Gostaria de saber mais sobre Hidratação Capilar na Bessie Beauty Club." },
+  { img: hidratacaoImg,  objectPos: "center 50%", name: "Tratamento Capilar",   tagline: "Cabelos que brilham de saúde",desc: "Tratamentos com Truss, Davines, L'Anza, Braé e Bessie. Nutrição, reconstrução e brilho duradouro.", price: "R$ 180–R$ 280",     duration: "60–120 min", waMsg: "Olá! Gostaria de saber mais sobre Tratamento Capilar na Bessie Beauty Club." },
   { img: spaDosPesImg,   objectPos: "center 40%", name: "Spa dos Pés",          tagline: "Relaxamento que você merece", desc: "Relaxamento profundo, cuidado especial e a sensação de leveza que seu corpo inteiro merece.", price: "A partir de R$ 59",  duration: "45–60 min",  waMsg: "Olá! Gostaria de saber mais sobre Spa dos Pés na Bessie Beauty Club." },
 ];
 

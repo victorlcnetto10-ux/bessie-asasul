@@ -1,4 +1,5 @@
 import { MessageCircle, Send, CheckCheck, Phone, Video, MoreVertical } from "lucide-react";
+import logoBessie from "@/assets/logo-bessie.png";
 
 const WHATSAPP_URL = "https://wa.me/5561999898382?text=Oi%2C%20quero%20ir%20hoje!%20Como%20funciona%20o%20atendimento%3F";
 const INSTAGRAM_URL = "https://www.instagram.com/bessie.asasul?igsh=MWpnc3l1NDZhenpmOQ%3D%3D&utm_source=qr";
@@ -74,10 +75,8 @@ const WhatsAppMockup = () => (
 
         {/* Chat header */}
         <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center
-                          bg-gradient-to-br from-primary to-primary/70 shadow-inner
-                          ring-2 ring-white/25">
-            <span className="text-white font-bold text-base leading-none font-heading">B</span>
+          <div className="w-10 h-10 rounded-full shrink-0 overflow-hidden ring-2 ring-white/25">
+            <img src={logoBessie} alt="Bessie Beauty Club" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-white font-semibold text-[14px] leading-tight">Bessie Beauty Club</p>

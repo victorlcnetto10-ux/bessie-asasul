@@ -1,5 +1,5 @@
-import { MapPin, Clock, MessageCircle, Instagram } from "lucide-react";
-import BessieLogo from "@/components/BessieLogo";
+import { MapPin, Clock, Instagram } from "lucide-react";
+import logoBessie from "@/assets/logo-bessie.png";
 
 const WHATSAPP_URL = "https://wa.me/5561999898382?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Bessie%20Beauty%20Club";
 const INSTAGRAM_URL = "https://www.instagram.com/bessie.asasul?igsh=MWpnc3l1NDZhenpmOQ%3D%3D&utm_source=qr";
@@ -13,7 +13,11 @@ const Footer = () => (
 
         {/* Brand */}
         <div className="flex flex-col gap-4">
-          <BessieLogo size="md" />
+          <img
+            src={logoBessie}
+            alt="Bessie Beauty Club"
+            className="w-36 md:w-40 object-contain"
+          />
           <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
             Seu espaço de beleza completo em Brasília. Qualidade premium, sem complicação.
           </p>
@@ -23,10 +27,10 @@ const Footer = () => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center
+              className="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center overflow-hidden p-1
                          hover:scale-110 active:scale-95 hover:shadow-md transition-all duration-200"
             >
-              <MessageCircle className="w-4 h-4" />
+              <img src={logoBessie} alt="Bessie Beauty Club" className="w-full h-full object-contain rounded-full" />
             </a>
             <a
               href={INSTAGRAM_URL}
@@ -46,7 +50,7 @@ const Footer = () => (
         <div className="hidden md:flex flex-col gap-4">
           <h4 className="text-sm font-semibold text-foreground tracking-wide uppercase">Serviços</h4>
           <ul className="flex flex-col gap-2">
-            {["Manicure e Pedicure", "Escova", "Penteado", "Corte", "Maquiagem", "Design de Sobrancelha", "Hidratação Capilar", "Spa dos Pés"].map((s) => (
+            {["Manicure e Pedicure", "Escova", "Penteado", "Corte", "Maquiagem", "Design de Sobrancelha", "Tratamento Capilar", "Spa dos Pés"].map((s) => (
               <li key={s}>
                 <span className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-default">
                   {s}
