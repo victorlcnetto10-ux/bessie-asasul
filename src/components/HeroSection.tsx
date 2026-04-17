@@ -33,7 +33,7 @@ const HeroSection = () => (
         <img
           src={logo}
           alt="Bessie Beauty Club"
-          className="w-40 sm:w-56 md:w-72 lg:w-80 mb-8 md:mb-10 animate-fade-in-up drop-shadow-2xl"
+          className="w-52 sm:w-72 md:w-96 lg:w-[420px] mb-8 md:mb-10 animate-fade-in-up drop-shadow-2xl"
           style={{ filter: "brightness(0) invert(1)" }}
           width={450}
           height={150}
@@ -64,10 +64,10 @@ const HeroSection = () => (
           style={{ animationDelay: "0.22s" }}
         >
           {/* Mobile: vertical com bullets */}
-          <div className="flex flex-col items-center gap-2 md:hidden">
+          <div className="flex flex-col items-center gap-3 md:hidden">
             {["Sem agendamento", "Todos os dias", "Serviços simultâneos"].map((item) => (
-              <span key={item} className="text-white/65 text-[13px] font-medium flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-primary inline-block" />
+              <span key={item} className="text-white/80 text-[16px] font-semibold flex items-center gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block shrink-0" />
                 {item}
               </span>
             ))}

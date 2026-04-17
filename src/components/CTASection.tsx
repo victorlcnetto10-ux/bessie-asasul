@@ -49,7 +49,7 @@ const CTASection = () => (
               <span className="text-white/80">que só a Bessie!</span>
             </h2>
             <p className="text-sm md:text-lg text-white/80 max-w-sm">
-              Atendimento sem hora marcada, de domingo a domingo. Seu momento de beleza começa aqui.
+              Sem hora marcada. Seg–Sáb das 8h às 20h, dom e feriados das 9h às 16h.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ const CTASection = () => (
             </a>
             <div className="flex items-center gap-2 md:gap-2.5 text-white/80">
               <Clock className="w-4 h-4 shrink-0" />
-              <span className="text-xs md:text-sm">Domingo a domingo · Sem hora marcada</span>
+              <span className="text-xs md:text-sm">Seg–Sáb: 8h–20h · Dom e feriados: 9h–16h</span>
             </div>
           </div>
 

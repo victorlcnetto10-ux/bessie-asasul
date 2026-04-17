@@ -18,8 +18,8 @@ const depoimentos = [
   },
   {
     img: imgHelena,
-    objectPosMobile: "center center",
-    objectPosDesktop: "center center",
+    objectPosMobile: "15% center",
+    objectPosDesktop: "15% center",
     nome: "Helena Marjorie",
     servico: "Manicure & Pedicure",
     texto:
@@ -27,13 +27,12 @@ const depoimentos = [
   },
   {
     img: imgLeticia,
-    // Letícia: rosto levemente para baixo para não cortar o topo da cabeça
     objectPosMobile: "center 20%",
     objectPosDesktop: "center 10%",
     nome: "Letícia Monteiro",
     servico: "Design de Sobrancelha",
     texto:
-      "Já testei vários lugares e esse foi o que mais curou minha sobrancelha de verdade. Profissional muito cuidadosa, resultado natural e duradouro. Recomendo para todo mundo.",
+      "Já testei vários lugares e esse foi o melhor salão de beleza express de Brasília. Recomendo para todas que vivem na correria do dia a dia.",
   },
 ];
 
@@ -113,7 +112,6 @@ const DepoimentosSection = () => {
             {/* Nome sobre a foto no mobile */}
             <div className="absolute bottom-0 inset-x-0 px-4 pb-4">
               <p className="text-white font-semibold text-sm">{current.nome}</p>
-              <p className="text-white/60 text-[10px] tracking-[0.18em] uppercase">{current.servico}</p>
             </div>
           </div>
 
@@ -121,30 +119,40 @@ const DepoimentosSection = () => {
           <div className={`transition-all duration-380 ease-in-out
                            ${fading ? "opacity-0 translate-y-1" : "opacity-100 translate-y-0"}`}>
             <div className="text-primary text-4xl font-heading leading-none select-none mb-3">"</div>
-            <p className="font-heading text-foreground text-[17px] font-semibold leading-relaxed -mt-2 mb-6">
+            <p className="font-heading text-foreground text-[17px] font-semibold leading-relaxed -mt-2 mb-3">
               {current.texto}
             </p>
+            <div className="text-primary text-4xl font-heading leading-none select-none text-right mb-3">"</div>
           </div>
 
           {/* Dots no mobile */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2">
             {depoimentos.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Depoimento ${i + 1}`}
-                className="relative h-[3px] rounded-full overflow-hidden bg-border transition-all duration-300"
-                style={{ width: i === active ? 44 : 14 }}
+                className="flex items-center justify-center"
+                style={{ padding: "10px 4px", background: "transparent", border: "none" }}
               >
-                {i === active && (
-                  <span
-                    className="absolute inset-y-0 left-0 bg-primary rounded-full"
-                    style={{ width: `${progress}%`, transition: "width 50ms linear" }}
-                  />
-                )}
-                {i !== active && (
-                  <span className="absolute inset-0 bg-border rounded-full" />
-                )}
+                <div
+                  className="relative overflow-hidden rounded-full transition-all duration-300"
+                  style={{
+                    width: i === active ? 28 : 6,
+                    height: 2,
+                    backgroundColor: i === active ? "transparent" : "hsl(var(--border))",
+                  }}
+                >
+                  {i === active && (
+                    <>
+                      <span className="absolute inset-0 rounded-full bg-border" />
+                      <span
+                        className="absolute inset-y-0 left-0 bg-primary rounded-full"
+                        style={{ width: `${progress}%`, transition: "width 50ms linear" }}
+                      />
+                    </>
+                  )}
+                </div>
               </button>
             ))}
           </div>
@@ -179,6 +187,7 @@ const DepoimentosSection = () => {
             <p className="font-heading text-foreground text-xl md:text-2xl font-semibold leading-relaxed -mt-4">
               {current.texto}
             </p>
+            <div className="text-primary text-6xl font-heading leading-none select-none text-right -mt-2">"</div>
             <div>
               <div className="flex items-center gap-3 mb-1">
                 <div className="w-7 h-px bg-primary" />
@@ -186,29 +195,35 @@ const DepoimentosSection = () => {
                   {current.nome}
                 </span>
               </div>
-              <p className="text-primary/70 text-xs font-medium tracking-[0.18em] uppercase ml-10">
-                {current.servico}
-              </p>
             </div>
             {/* Dots */}
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex items-center gap-2 mt-2">
               {depoimentos.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => goTo(i)}
                   aria-label={`Depoimento ${i + 1}`}
-                  className="relative h-[3px] rounded-full overflow-hidden bg-border transition-all duration-300"
-                  style={{ width: i === active ? 52 : 18 }}
+                  className="flex items-center justify-center"
+                  style={{ padding: "10px 4px", background: "transparent", border: "none" }}
                 >
-                  {i === active && (
-                    <span
-                      className="absolute inset-y-0 left-0 bg-primary rounded-full"
-                      style={{ width: `${progress}%`, transition: "width 50ms linear" }}
-                    />
-                  )}
-                  {i !== active && (
-                    <span className="absolute inset-0 bg-border rounded-full" />
-                  )}
+                  <div
+                    className="relative overflow-hidden rounded-full transition-all duration-300"
+                    style={{
+                      width: i === active ? 32 : 7,
+                      height: 2,
+                      backgroundColor: i === active ? "transparent" : "hsl(var(--border))",
+                    }}
+                  >
+                    {i === active && (
+                      <>
+                        <span className="absolute inset-0 rounded-full bg-border" />
+                        <span
+                          className="absolute inset-y-0 left-0 bg-primary rounded-full"
+                          style={{ width: `${progress}%`, transition: "width 50ms linear" }}
+                        />
+                      </>
+                    )}
+                  </div>
                 </button>
               ))}
             </div>

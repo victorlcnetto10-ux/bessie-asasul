@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Clock, MessageCircle, ArrowRight } from "lucide-react";
+import { Clock, MessageCircle } from "lucide-react";
 import manicureImg    from "@/assets/Manicure.jpeg";
 import escovaImg      from "@/assets/Escova.jpeg";
 import penteadoImg    from "@/assets/Penteado.jpeg";
@@ -12,36 +12,23 @@ import spaDosPesImg   from "@/assets/Spa-dos-pés.jpeg";
 const BASE_WA = "https://wa.me/5561999898382?text=";
 
 const services = [
-  { img: manicureImg,    objectPos: "center 30%", name: "Manicure e Pedicure", tagline: "Unhas sempre impecáveis",     desc: "Esmaltação em gel, spa dos pés, hidratação e acabamento duradouro para qualquer ocasião.", price: "A partir de R$ 46",  duration: "45–90 min",  waMsg: "Olá! Gostaria de saber mais sobre Manicure e Pedicure na Bessie Beauty Club." },
-  { img: escovaImg,      objectPos: "center 20%", name: "Escova",               tagline: "Fios lisos e sedosos",        desc: "Progressiva, relaxamento e hidratação profunda. Tratamento personalizado para o seu tipo de cabelo.", price: "A partir de R$ 99",  duration: "60–120 min", waMsg: "Olá! Gostaria de saber mais sobre Escova na Bessie Beauty Club." },
-  { img: penteadoImg,    objectPos: "center 15%", name: "Penteado",             tagline: "Para momentos que marcam",    desc: "Penteados para festas, casamentos e formaturas. Do clássico ao moderno, sempre impecável.", price: "A partir de R$ 238", duration: "60–90 min",  waMsg: "Olá! Gostaria de saber mais sobre Penteado na Bessie Beauty Club." },
-  { img: corteImg,       objectPos: "center 25%", name: "Corte",                tagline: "Estilo que combina com você", desc: "Cortes modernos, degradê e acabamentos precisos. Consultoria inclusa para o melhor resultado.", price: "A partir de R$ 150", duration: "30–60 min",  waMsg: "Olá! Gostaria de saber mais sobre Corte na Bessie Beauty Club." },
-  { img: maquiagemImg,   objectPos: "center 20%", name: "Maquiagem",            tagline: "Realce sua beleza natural",   desc: "Make social, noiva e artística. Técnicas profissionais para um look impecável e duradouro.", price: "R$ 110–R$ 260",     duration: "45–90 min",  waMsg: "Olá! Gostaria de saber mais sobre Maquiagem na Bessie Beauty Club." },
-  { img: sobrancelhaImg, objectPos: "center 30%", name: "Sobrancelha",          tagline: "O olhar que transforma",      desc: "Design personalizado, henna e brow lamination. Moldamos para realçar a estrutura do seu rosto.", price: "A partir de R$ 70",  duration: "30–45 min",  waMsg: "Olá! Gostaria de saber mais sobre Design de Sobrancelha na Bessie Beauty Club." },
-  { img: hidratacaoImg,  objectPos: "center 50%", name: "Tratamento Capilar",   tagline: "Cabelos que brilham de saúde",desc: "Tratamentos com Truss, Davines, L'Anza, Braé e Bessie. Nutrição, reconstrução e brilho duradouro.", price: "R$ 180–R$ 280",     duration: "60–120 min", waMsg: "Olá! Gostaria de saber mais sobre Tratamento Capilar na Bessie Beauty Club." },
-  { img: spaDosPesImg,   objectPos: "center 40%", name: "Spa dos Pés",          tagline: "Relaxamento que você merece", desc: "Relaxamento profundo, cuidado especial e a sensação de leveza que seu corpo inteiro merece.", price: "A partir de R$ 59",  duration: "45–60 min",  waMsg: "Olá! Gostaria de saber mais sobre Spa dos Pés na Bessie Beauty Club." },
+  { img: manicureImg,    objectPos: "center 30%", name: "Manicure e Pedicure", tagline: "Unhas sempre impecáveis",      desc: "Unhas com esmaltação impecável e tratamentos que garantem sua beleza.",                                                                price: "A partir de R$ 46",  duration: "30 min",     waMsg: "Olá! Gostaria de saber mais sobre Manicure e Pedicure na Bessie Beauty Club." },
+  { img: escovaImg,      objectPos: "center 20%", name: "Escova",               tagline: "Fios lisos e sedosos",         desc: "Cabelos lindos, sedosos e com brilho intenso em poucos minutos.",                                                                    price: "A partir de R$ 99",  duration: "40 min",     waMsg: "Olá! Gostaria de saber mais sobre Escova na Bessie Beauty Club." },
+  { img: maquiagemImg,   objectPos: "center 20%", name: "Maquiagem",            tagline: "Realce sua beleza natural",    desc: "Realce sua beleza natural com uma maquiagem profissional para todas as ocasiões.",                                                    price: "R$ 110–R$ 260",     duration: "30 min",     waMsg: "Olá! Gostaria de saber mais sobre Maquiagem na Bessie Beauty Club." },
+  { img: sobrancelhaImg, objectPos: "center 30%", name: "Sobrancelha",          tagline: "O olhar que transforma",       desc: "Design de sobrancelhas que valoriza sua expressão e harmoniza com os traços do seu rosto.",                                           price: "A partir de R$ 70",  duration: "20 min",     waMsg: "Olá! Gostaria de saber mais sobre Design de Sobrancelha na Bessie Beauty Club." },
+  { img: hidratacaoImg,  objectPos: "center 50%", name: "Tratamento Capilar",   tagline: "Cabelos que brilham de saúde", desc: "Tratamentos com Truss, Davines, L'Anza, Braé e Bessie. Nutrição, reconstrução e brilho duradouro.",                                  price: "R$ 180–R$ 280",     duration: "50 min",     waMsg: "Olá! Gostaria de saber mais sobre Tratamento Capilar na Bessie Beauty Club." },
+  { img: corteImg,       objectPos: "center 25%", name: "Corte",                tagline: "Estilo que combina com você",  desc: "Transforme seu visual com cortes modernos e personalizados.",                                                                        price: "A partir de R$ 150", duration: "40 min",     waMsg: "Olá! Gostaria de saber mais sobre Corte na Bessie Beauty Club." },
+  { img: penteadoImg,    objectPos: "center 15%", name: "Penteado",             tagline: "Para momentos que marcam",     desc: "Para eventos especiais ou para transformar o seu dia. Penteados que unem criatividade e personalização.",                             price: "A partir de R$ 238", duration: "60 min",     waMsg: "Olá! Gostaria de saber mais sobre Penteado na Bessie Beauty Club." },
+  { img: spaDosPesImg,   objectPos: "center 40%", name: "Spa dos Pés",          tagline: "Relaxamento que você merece",  desc: "Relaxe e cuide dos seus pés com tratamentos especiais que promovem bem-estar e maciez.",                                              price: "A partir de R$ 59",  duration: "40 min",     waMsg: "Olá! Gostaria de saber mais sobre Spa dos Pés na Bessie Beauty Club." },
 ];
 
 /* ─────────────────────────────────────────────────────────────
-   MOBILE CARD — coluna única, largura total
-
-   Altura: 58vh
-   → Card 1 ocupa 58vh da tela
-   → Card 2 já aparece nos próximos ~42vh (peek natural)
-   → Usuário vê 2 serviços ao mesmo tempo, com espaço real
-
-   FECHADO
-   → Imagem full, gradiente fino apenas no rodapé
-   → Tagline pequena + Nome grande + linha "ver mais"
-
-   ABERTO (toque)
-   → Imagem escala levemente (zoom sutil)
-   → Painel glass sobe do rodapé, cobre 50% do card
-   → Glass: backdropFilter blur + rgba baixo → imagem visível atrás
-   → Conteúdo: tagline · nome · divisor · descrição · preço + tempo
-   → Sem botão no card (CTA único abaixo de tudo)
+   MOBILE CARD — coluna única, 58vh
+   Mantém glass/gradiente mas com contraste melhorado:
+   · Gradiente fechado mais profundo
+   · Painel glass: blur forte + tint escuro translúcido
+   · Texto 100% branco + text-shadow para legibilidade
 ─────────────────────────────────────────────────────────────── */
-
 const MobileCard = ({
   service,
   isOpen,
@@ -60,7 +47,7 @@ const MobileCard = ({
       style={{
         height: "58vh",
         boxShadow: isOpen
-          ? "0 24px 48px -8px rgba(0,0,0,0.18)"
+          ? "0 24px 48px -8px rgba(0,0,0,0.22)"
           : "0 4px 20px -4px rgba(0,0,0,0.10)",
         transition: "box-shadow 0.4s ease",
       }}
@@ -81,77 +68,87 @@ const MobileCard = ({
         height={1000}
       />
 
-      {/* ── FECHADO: vignette leve + label ── */}
+      {/* ── FECHADO: gradiente profundo + label ── */}
       <div
         className="absolute inset-0 pointer-events-none flex flex-col justify-end px-5 pb-6"
         style={{
           background:
-            "linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.08) 40%, transparent 65%)",
+            "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.30) 45%, transparent 70%)",
           opacity: isOpen ? 0 : 1,
           transition: "opacity 0.28s ease",
         }}
       >
-        <p className="text-white/55 text-[9px] font-semibold tracking-[0.28em] uppercase mb-2 leading-none">
+        <p
+          className="text-[10px] font-semibold tracking-[0.28em] uppercase mb-2 leading-none"
+          style={{ color: "rgba(255,255,255,0.75)", textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}
+        >
           {tagline}
         </p>
-        <h3 className="font-heading font-bold text-white text-[24px] leading-tight">
+        <h3
+          className="font-heading font-bold text-[26px] leading-tight"
+          style={{ color: "#fff", textShadow: "0 2px 8px rgba(0,0,0,0.55)" }}
+        >
           {name}
         </h3>
         <div className="flex items-center gap-2 mt-3">
-          <span className="block h-px w-5 bg-primary/70 rounded-full" />
-          <span className="text-white/40 text-[9px] font-semibold tracking-[0.22em] uppercase">
+          <span className="block h-px w-5 bg-primary rounded-full" />
+          <span
+            className="text-[9px] font-semibold tracking-[0.22em] uppercase"
+            style={{ color: "rgba(255,255,255,0.60)", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}
+          >
             ver detalhes
           </span>
         </div>
       </div>
 
-      {/* ── ABERTO: painel glass ──
-           Cobre 50% inferior. Imagem fica visível nos 50% superiores.
-           Glass leve: apenas blur + tint mínimo — sem escurecer.
-      ─────────────────────────────────────────────────────────── */}
+      {/* ── ABERTO: painel glass escuro translúcido ── */}
       <div
         className="absolute inset-x-0 bottom-0"
         style={{
-          height: "50%",
+          height: "55%",
           transform: isOpen ? "translateY(0)" : "translateY(100%)",
           transition: "transform 0.45s cubic-bezier(0.33,1,0.68,1)",
           willChange: "transform",
         }}
       >
-        {/* Camada glass — transparente, sem fundo escuro */}
+        {/* Glass com tint escuro — mantém translucidez mas garante legibilidade */}
         <div
           className="absolute inset-0 rounded-b-3xl"
           style={{
-            backdropFilter: "blur(28px) saturate(1.6)",
-            WebkitBackdropFilter: "blur(28px) saturate(1.6)",
-            backgroundColor: "rgba(255,248,245,0.14)",
-            borderTop: "1px solid rgba(255,255,255,0.18)",
+            backdropFilter: "blur(32px) saturate(1.4)",
+            WebkitBackdropFilter: "blur(32px) saturate(1.4)",
+            backgroundColor: "rgba(10,6,4,0.58)",
+            borderTop: "1px solid rgba(255,255,255,0.12)",
           }}
         />
 
-        {/* Conteúdo sobre o glass */}
+        {/* Conteúdo */}
         <div className="relative h-full flex flex-col justify-between px-5 pt-5 pb-6">
 
-          {/* Topo: tagline + nome */}
+          {/* Tagline + nome */}
           <div>
-            <p className="text-white/55 text-[8.5px] font-semibold tracking-[0.26em] uppercase leading-none mb-2">
+            <p
+              className="text-[9px] font-semibold tracking-[0.26em] uppercase leading-none mb-2"
+              style={{ color: "rgba(255,255,255,0.65)" }}
+            >
               {tagline}
             </p>
-            <h3 className="font-heading font-bold text-white text-[22px] leading-tight drop-shadow-sm">
+            <h3
+              className="font-heading font-bold text-[23px] leading-tight"
+              style={{ color: "#fff", textShadow: "0 1px 6px rgba(0,0,0,0.3)" }}
+            >
               {name}
             </h3>
           </div>
 
           {/* Divisor */}
-          <div
-            className="shrink-0"
-            style={{ height: "1px", background: "rgba(255,255,255,0.18)" }}
-          />
+          <div style={{ height: "1px", background: "rgba(255,255,255,0.20)", flexShrink: 0 }} />
 
           {/* Descrição */}
           <p
-            className="text-white/80 text-[13px] leading-relaxed"
+            className="text-[13.5px] leading-relaxed"
             style={{
+              color: "rgba(255,255,255,0.92)",
               display: "-webkit-box",
               WebkitLineClamp: 3,
               WebkitBoxOrient: "vertical",
@@ -163,13 +160,13 @@ const MobileCard = ({
 
           {/* Preço + duração */}
           <div className="flex items-center gap-3">
-            <span className="text-primary font-bold text-[17px] leading-none drop-shadow-sm">
+            <span
+              className="font-bold text-[18px] leading-none"
+              style={{ color: "hsl(var(--primary))", textShadow: "0 1px 4px rgba(0,0,0,0.2)" }}
+            >
               {price}
             </span>
-            <div
-              className="flex items-center gap-1.5"
-              style={{ color: "rgba(255,255,255,0.45)", fontSize: "10.5px" }}
-            >
+            <div className="flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.65)", fontSize: "11px" }}>
               <Clock className="w-3 h-3 flex-shrink-0" />
               <span>{duration}</span>
             </div>
@@ -182,7 +179,7 @@ const MobileCard = ({
 };
 
 /* ─────────────────────────────────────────────────────────────
-   DESKTOP CARD — hover panel (inalterado, funciona bem)
+   DESKTOP CARD — hover panel
 ─────────────────────────────────────────────────────────────── */
 const DesktopCard = ({
   img, objectPos, name, tagline, desc, price, duration, waMsg, delay,
@@ -282,11 +279,7 @@ const ServicosSection = () => {
           </p>
         </div>
 
-        {/* ── MOBILE: coluna única, cards 58vh ─────────────────
-             Card 1 = 58vh visível completamente
-             Card 2 = já aparece ~42vh abaixo → "2 por tela"
-             Scroll natural, sem força, layout sempre correto
-        ───────────────────────────────────────────────────── */}
+        {/* ── MOBILE: coluna única ── */}
         <div className="md:hidden flex flex-col gap-3">
           {services.map((s, i) => (
             <MobileCard
